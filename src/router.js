@@ -15,6 +15,14 @@ export default new Router({
       component: () => import(/* webpackChunkName: "accueil" */ "./views/Accueil.vue")
     },
     {
+      path: "/commandes",
+      name: "commandes",
+      // route level code-splitting
+      // this generates a separate chunk (accueil.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "accueil" */ "./views/Commandes.vue")
+    },
+    {
       path: "*",
       redirect: "accueil"
     }

@@ -1,4 +1,4 @@
-<h1 align="center">Bienvenue dans le projet {{PROJECT_NAME}} 👋</h1>
+<h1 align="center">Bienvenue dans le projet bornedrive-mobile 👋</h1>
 <p>
   <a href="{{GithubUrl}}#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
@@ -12,7 +12,7 @@
 
 ### 🏠 [Page d'accueil]({{GithubUrl}}#readme)
 
-### 💻 [Application en intégration](http://{{PROJECT_NAME}}.devint.groupement.systeme-u.fr/)
+### 💻 [Application en intégration](http://bornedrive-mobile.devint.groupement.systeme-u.fr/)
 
 ## Installation des dépendances
 

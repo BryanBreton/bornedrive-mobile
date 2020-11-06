@@ -1,4 +1,4 @@
-# Contribuez au projet {{PROJECT_NAME}}
+# Contribuez au projet bornedrive-mobile
 
 👍🎉 Tout d'abord merci d'avoir pris du temps pour contribuer! 🎉👍
 
@@ -21,7 +21,7 @@ Pour installer le projet vous aurez besoin de `node` et `npm`
     git clone {{GithubUrl}}.git
 
     # Naviguer dans le nouveau dossier cloné
-    cd {{PROJECT_NAME}}
+    cd bornedrive-mobile
     ```
 
 2.  Votre environnement nécessite `node` version >= 9.3.0 et `npm` version >= 5.5.0.

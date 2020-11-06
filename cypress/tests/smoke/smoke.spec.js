@@ -1,4 +1,4 @@
-describe("Smoke test {{PROJECT_NAME}}", () => {
+describe("Smoke test bornedrive-mobile", () => {
   it("Smoke test", () => {
     cy.login("Centrale", "Centrale Nationale", "recusr01", "superu")
     cy.irisAvatarHasInitials()

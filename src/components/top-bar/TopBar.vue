@@ -2,7 +2,7 @@
   <v-app-bar app color="primary" dark>
     <v-spacer></v-spacer>
 
-    <h2>Projet {{PROJECT_NAME}}</h2>
+    <h2>Projet bornedrive-mobile</h2>
 
     <v-spacer></v-spacer>
 
