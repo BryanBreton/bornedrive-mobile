@@ -8,7 +8,7 @@
     <v-container>
       <v-row v-for="commande in commandes" :key="commande.id">
           <v-container>
-              <v-card :class="commande.borne.color" @click="distribuer(commande.id)" elevation="1" outlined shaped style="width: 100% !important">
+              <v-card :class="[commande.statut === 3 ? 'gray' : commande.borne.color, 'testage']" @click="distribuer(commande.id)" elevation="1" outlined shaped style="width: 100% !important">
                 <v-row>
                   <v-col cols="2" class="numBorne">{{ commande.borne.id }}</v-col>
                 <v-col cols="8" class="d-flex align-end mb-6">{{ commande.client.nom }} : {{ commande.client.numeroCarte }}</v-col>
@@ -34,10 +34,10 @@ export default {
   },
   methods:{
     distribuer(idCommande){
-        axios.get('http://localhost:8080/commandes/'+idCommande+'/preparateur/'+localStorage.id)
+        axios.get('http://localhost:3001/commandes/'+idCommande+'/preparateur/'+localStorage.id)
     },
     getDatas(){
-        axios.get("http://localhost:8080/commandes/toPick").then(r => {
+        axios.get("http://localhost:3001/commandes/toPick").then(r => {
           this.commandes = r.data
         })
         setTimeout(() => {
@@ -64,5 +64,8 @@ export default {
 }
 .numCommande{
   font-size: 400% !important;
+}
+.statut-3{
+  background-color: gray !important;
 }
 </style>
