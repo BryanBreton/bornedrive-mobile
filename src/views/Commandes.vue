@@ -11,8 +11,8 @@
               <v-card :class="[commande.statut === 3 ? 'gray' : commande.borne.color, 'testage']" @click="distribuer(commande.id)" elevation="1" outlined shaped style="width: 100% !important">
                 <v-row>
                   <v-col cols="2" class="numBorne">{{ commande.borne.id }}</v-col>
-                <v-col cols="8" class="d-flex align-end mb-6">{{ commande.client.nom }} : {{ commande.client.numeroCarte }}</v-col>
-                <v-col cols="2" class="numCommande">{{ commande.id }}</v-col>
+                <v-col cols="6" class="d-flex align-end mb-6">{{ commande.client.civilite }} {{ commande.client.nom }} {{ commande.client.prenom }}</v-col>
+                <v-col cols="4" class="numCommande">{{ commande.codeCourt }}</v-col>
                 </v-row>
                 
               </v-card>
@@ -34,10 +34,10 @@ export default {
   },
   methods:{
     distribuer(idCommande){
-        axios.get('http://localhost:3001/commandes/'+idCommande+'/preparateur/'+localStorage.id)
+        axios.get('http://' + window.location.hostname + ':3001/commandes/'+idCommande+'/preparateur/'+localStorage.id)
     },
     getDatas(){
-        axios.get("http://localhost:3001/commandes/toPick").then(r => {
+        axios.get('http://' + window.location.hostname + ':3001/commandes/toPick').then(r => {
           this.commandes = r.data
         })
         setTimeout(() => {
@@ -60,10 +60,10 @@ export default {
     height: 100% !important;
 }
 .numBorne{
-  font-size: 400% !important;
+  font-size: 300% !important;
 }
 .numCommande{
-  font-size: 400% !important;
+  font-size: 300% !important;
 }
 .statut-3{
   background-color: gray !important;

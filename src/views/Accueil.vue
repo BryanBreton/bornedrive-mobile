@@ -29,7 +29,7 @@ export default {
   },
   methods:{
     connexion(){
-      axios.get('http://localhost:3001/preparateurs/'+this.matricule).then(res => {
+      axios.get('http://' + window.location.hostname + ':3001/preparateurs/'+this.matricule).then(res => {
         if(res.data.nom){
           this.user = res.data
           localStorage.nom = res.data.nom
