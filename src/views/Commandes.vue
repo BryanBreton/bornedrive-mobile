@@ -16,6 +16,12 @@
             shaped
             style="width: 100% !important"
           >
+          
+            <v-row v-if="commande.preparateur != null">
+              <v-col v-if="commande.preparateur.id == id">
+                <v-btn @click="finCommande(commande.id)" class="primary">Fin de commande</v-btn>
+              </v-col>
+            </v-row>
             <v-row>
               <v-col cols="2" class="numBorne">{{ commande.borne.id }}</v-col>
               <v-col cols="5" class="d-flex align-end mb-6">{{ commande.client.civilite }} {{ commande.client.nom }} {{ commande.client.prenom }}</v-col>
@@ -35,9 +41,14 @@ export default {
     return {
       commandes: [],
       prenom: "",
+      id: ""
     }
   },
   methods: {
+    finCommande(idCommande){
+      console.log(idCommande);
+      axios.get("http://" + window.location.hostname + ":3001/commandes/" + idCommande + "/finish")
+    },
     distribuer(idCommande) {
       axios.get("http://" + window.location.hostname + ":3001/commandes/" + idCommande + "/preparateur/" + localStorage.id)
     },
@@ -52,6 +63,7 @@ export default {
   },
   mounted() {
     this.prenom = localStorage.prenom
+    this.id = localStorage.id
     this.getDatas()
   },
 }
