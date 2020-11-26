@@ -18,7 +18,8 @@ module.exports = {
   testURL: "http://localhost/",
   watchPlugins: ["jest-watch-typeahead/filename", "jest-watch-typeahead/testname"],
   reporters: [
-    "default", "jest-sonar",
+    "default",
+    "jest-sonar",
     [
       "./node_modules/jest-html-reporter",
       {
